@@ -4,6 +4,6 @@ while true; do
     instructions=$(./push_swap $input);
     instruction_count=$(echo "$instructions" | wc -l);
     echo -e "Number of instructions: $instruction_count";
-    valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap $input 2>&1 | grep -A 10 "LEAK SUMMARY";
+    valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./push_swap $input 2>&1 | grep -A 10 "LEAK SUMMARY";
     sleep 1;
 done
